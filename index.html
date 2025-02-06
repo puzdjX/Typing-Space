@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Space</title>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <link rel="shortcut icon" href="./src/assets/planet.svg" />
+    <link rel="stylesheet" href="./src/assets/font.css" />
+
+    <!-- <meta name="theme-color" content="#242424" />     -->
+    <meta name="description" content="" />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/icon-small.svg"
+      sizes="180x180"
+    />
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <canvas id="canvas"></canvas>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      // 检查浏览器是否支持 Service Worker
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          // 注册 Service Worker，并指定 Service Worker 文件的路径
+          navigator.serviceWorker.register("/service-worker.js").then(
+            (registration) => {
+              // 注册成功时的回调函数
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            (err) => {
+              // 注册失败时的回调函数
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+          // 监听来自 Service Worker 的消息
+          navigator.serviceWorker.addEventListener("message", (event) => {
+            // 检查消息内容是否包含 'refresh' 动作
+            if (event.data.action === "refresh") {
+              // 如果是，重新加载页面以获取最新内容
+              window.location.reload();
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

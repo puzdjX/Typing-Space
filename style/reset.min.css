@@ -1,0 +1,318 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #000;
+    transition: 1s ease;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: #329bf1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.line-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 100;
+    background-color: #000;
+}
+
+.line {
+    position: absolute;
+    right: 50px;
+    width: 5px;
+    height: 0%;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px #fff;
+}
+
+/* 顶部 */
+.top {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #282828;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, #79a6fe, #8BD17C) 1;
+}
+
+.navbar-brand {
+    display: block;
+    float: left;
+    font-size: 25px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    padding: 0 15px;
+}
+
+.navbar-nav {
+    float: left;
+}
+
+.navbar-nav>li {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.navbar-nav li a {
+    color: #fff;
+    padding: 14px 15px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.navbar-nav li a:hover {
+    opacity: .8;
+}
+
+.navbar-account {
+    float: right;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    min-width: 160px;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background-clip: padding-box;
+}
+
+.dropdown-menu li {
+    clear: both;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: #777;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.dropdown-menu li a:hover {
+    color: #282828;
+    background-color: #eee;
+}
+
+.main-section {
+    display: flex;
+    flex-flow: column;
+    padding-top: 80px;
+    position: relative;
+}
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    font-size: 20px;
+    color: #fff;
+    background-color: #212942;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transform: translate(-50%,0%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.alert-show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,30%);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 15px; /* 滚动条宽度 */
+}
+ 
+/* 滚动条轨道样式 */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 滚动条轨道背景色 */
+}
+ 
+/* 滚动条滑块样式 */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #a5a4a0 0%, #4a4b4d 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+ 
+/* 滚动条滑块悬停样式 */
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(180deg, #b3b2af 0%, #656567 99%); /* 滚动条滑块悬停背景色 */
+}
