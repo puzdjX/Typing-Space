@@ -101,4 +101,11 @@ export default {
 </template>
 
 
-<style scoped></style>
+<style scoped>
+.rank-name {
+    width: 42%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+</style>
